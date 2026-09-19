@@ -79,7 +79,7 @@ Consumers pin a release asset — no build step, no JavaScript:
 ```html
 <!-- pinned, the one to use -->
 <link rel="stylesheet"
-      href="https://github.com/colonization-re/web-ui/releases/download/v1.0.0/col.css">
+      href="https://github.com/colonization-re/web-ui/releases/download/v1.1.0/col.css">
 
 <!-- rolling -->
 <link rel="stylesheet"
