@@ -63,3 +63,50 @@
   <span class="col-label">Notes</span>
   <textarea class="col-textarea">Ore bonus on the hills to the east; worth a second colonist.</textarea>
 </label>
+
+<div class="col-card" style="margin-top:16px">
+  <p class="col-eyebrow">Sizes, cells and a slider</p>
+
+  <div class="col-row" style="margin-bottom:16px">
+    <span class="col-label col-label--inline">Zoom</span>
+    <input type="range" class="col-range" min="4" max="20" step="1" value="12">
+    <span class="col-label col-label--inline">Disabled</span>
+    <input type="range" class="col-range" min="4" max="20" value="8" disabled>
+  </div>
+
+  <div class="col-row" style="margin-bottom:16px">
+    <span class="col-label col-label--inline">Offset</span>
+    <input class="col-input col-input--xs col-input--mono" value="0x1d">
+    <span class="col-label col-label--inline">Name</span>
+    <input class="col-input col-input--sm col-input--auto" style="--_w:260px"
+           value="New Amsterdam">
+    <select class="col-select col-input--sm col-input--auto">
+      <option selected>Dutch</option><option>English</option>
+    </select>
+    <label class="col-check"><input type="checkbox" checked><span>Locked</span></label>
+    <label class="col-switch"><input type="checkbox"><span>Raw</span></label>
+  </div>
+
+  <div class="col-cells">
+    <label class="col-cell"><span>Food</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="120"></label>
+    <label class="col-cell"><span>Sugar</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="0"></label>
+    <label class="col-cell"><span>Tobacco</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="34"></label>
+    <label class="col-cell"><span>Cotton</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="12"></label>
+    <label class="col-cell"><span>Furs</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="88"></label>
+    <label class="col-cell"><span>Lumber</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="200"></label>
+    <label class="col-cell"><span>Ore</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="45"></label>
+    <label class="col-cell"><span>Tools</span>
+      <input type="number" class="col-input col-input--mono col-input--xs" value="17"></label>
+  </div>
+  <p class="col-hint">The <code>&lt;label&gt;</code> wrapper is what makes each
+    caption the input's accessible name, with no <code>id</code>/<code>for</code>
+    pair to generate. The row above it shows a <code>.col-row</code> holding a
+    check and a switch without either one's stacked-form bottom margin.</p>
+</div>

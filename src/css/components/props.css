@@ -1,0 +1,38 @@
+/* props.css - A property grid: a repeating `label | control` pair with an
+ * optional full-width note underneath, ruled between rows. For editing a
+ * structure field by field.
+ *
+ * dl.col-dl is the read-only cousin - no control column, no note row, and
+ * right-aligned keys that make a long scan hard to follow.
+ *
+ * .col-prop has THREE children in a TWO-column grid; the description is a grid
+ * item placed in column 2, not a wrapper. Do not nest the label and the
+ * control in a sub-div - the rule and the alignment both depend on the grid
+ * staying flat.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-props{--_k:230px;display:flex;flex-direction:column}
+
+/* --_k widens the label column for long names without redefining the
+ * component. Set it on .col-props for every row, or on one .col-prop. */
+.col-prop{display:grid;grid-template-columns:var(--_k,230px) 1fr;
+  gap:9px 16px;align-items:start;
+  padding:9px 0;border-top:1px solid var(--rule)}
+.col-prop:first-child{border-top:0}
+
+.col-prop-label{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
+.col-prop-name{font-family:var(--font-mono);font-size:13px}
+.col-prop-desc{grid-column:2;max-width:80ch;font-size:12.5px;line-height:1.5;
+  color:var(--text-3)}
+
+/* A row that is present but not established - shown deliberately, but it
+ * should not compete with the rows that are known. */
+.col-prop--muted{opacity:.72;transition:opacity var(--t-fast) var(--ease)}
+.col-prop--muted:hover{opacity:1}
+
+@media (max-width:700px){
+  .col-prop{grid-template-columns:1fr}
+  .col-prop-desc{grid-column:1}
+}

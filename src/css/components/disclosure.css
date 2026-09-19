@@ -1,0 +1,24 @@
+/* disclosure.css - A <details> that reads as a card: a friendly summary on
+ * top, the complete detail folded underneath.
+ *
+ * The native disclosure triangle is kept. Drawing one would cost a rotation
+ * transition, and the sheet has exactly two durations; the marker the browser
+ * already draws is free, is themed by color-scheme, and does not need one.
+ *
+ * No margin - the consumer's stack spaces it, as .col-card does.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-disclosure{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r)}
+.col-disclosure > summary{padding:11px 14px;cursor:pointer;
+  font-family:var(--font-mono);font-size:12.5px;letter-spacing:.04em;
+  color:var(--text-2);
+  transition:color var(--t-fast) var(--ease)}
+.col-disclosure > summary:hover{color:var(--text)}
+
+/* Keep the body's left edge on the summary's, whatever the consumer puts
+ * inside; the last child carries the bottom padding. */
+.col-disclosure > *:not(summary){padding-left:14px;padding-right:14px}
+.col-disclosure > *:last-child:not(summary){padding-bottom:14px}

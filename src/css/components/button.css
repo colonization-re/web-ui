@@ -52,3 +52,17 @@
 .col-btn--icon{padding:0;width:38px;min-height:38px}
 .col-btn--sm.col-btn--icon{width:30px}
 .col-btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* A file picker that looks like a button. <input type="file"> cannot be
+ * styled, so the input is laid over the whole face of a <label> that is one -
+ * inset:0 is what makes the button's whole face the hit area rather than just
+ * the native control's own box, and the zero font size stops a tall control
+ * forcing the label taller.
+ *
+ * The input stays focusable but is invisible, so the label has to show the
+ * ring on its behalf or keyboard focus lands somewhere nobody can see. */
+.col-btn--file{position:relative;overflow:hidden}
+.col-btn--file input{position:absolute;inset:0;opacity:0;font-size:0;
+  cursor:pointer}
+.col-btn--file:has(input:focus-visible){outline:2px solid var(--brand);
+  outline-offset:2px}

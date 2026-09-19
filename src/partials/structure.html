@@ -1,0 +1,89 @@
+<div class="col-sectionhead"><h2>Structure</h2></div>
+<p class="col-lead">A vertical index on the left, the record it selects on the
+  right — the shape of a tool that edits one thing out of many.</p>
+
+<div class="col-grid col-grid--2">
+  <div class="col-card">
+    <p class="col-eyebrow">Colonies</p>
+    <div class="col-list">
+      <button class="col-list-item is-active">
+        <span class="col-list-i">12</span>Jamestown — pop 3, Dutch</button>
+      <button class="col-list-item">
+        <span class="col-list-i">13</span>Fort Orange — pop 1, Dutch</button>
+      <button class="col-list-item">
+        <span class="col-list-i">14</span>New Amsterdam — pop 8, Dutch</button>
+      <button class="col-list-item col-list-item--sub">
+        <span class="col-list-i">14a</span>outer warehouse</button>
+      <button class="col-list-item" aria-selected="false">
+        <span class="col-list-i">15</span>Roanoke — pop 0, English</button>
+    </div>
+  </div>
+
+  <div class="col-card">
+    <p class="col-eyebrow">Colony record, +0x0e</p>
+    <div class="col-props">
+      <div class="col-prop">
+        <div class="col-prop-label">
+          <span class="col-prop-name">name</span>
+          <span class="col-meta">+0x00 · 24b</span>
+        </div>
+        <div><input class="col-input col-input--sm" value="Jamestown"></div>
+      </div>
+      <div class="col-prop">
+        <div class="col-prop-label">
+          <span class="col-prop-name">bells</span>
+          <span class="col-badge col-badge--ok">high</span>
+          <span class="col-meta">+0x1d</span>
+        </div>
+        <div><input class="col-input col-input--xs col-input--mono" value="14"></div>
+        <div class="col-prop-desc">Accumulated liberty bells. Reset when a new
+          statesman is produced.</div>
+      </div>
+      <div class="col-prop">
+        <div class="col-prop-label">
+          <span class="col-prop-name">nation</span>
+          <span class="col-meta">+0x1f</span>
+        </div>
+        <div><select class="col-select col-input--sm col-input--auto">
+          <option selected>Dutch</option><option>English</option>
+          <option>French</option><option>Spanish</option></select></div>
+      </div>
+      <div class="col-prop col-prop--muted">
+        <div class="col-prop-label">
+          <span class="col-prop-name">unknown_20</span>
+          <span class="col-meta">+0x20 · 2b</span>
+        </div>
+        <div><input class="col-input col-input--xs col-input--mono" value="0x00c4"></div>
+        <div class="col-prop-desc">Meaning not established. Shown so it can be
+          edited, muted so it does not compete with the rows that are known.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-stack" style="margin-top:20px">
+  <details class="col-disclosure">
+    <summary>All 142 bytes of the globals block</summary>
+    <p class="col-hint">The fields nothing has claimed yet. Opened by the
+      people who are mapping the format, folded away for everyone else.</p>
+    <div class="col-props" style="--_k:170px">
+      <div class="col-prop">
+        <div class="col-prop-label"><span class="col-prop-name">turn</span>
+          <span class="col-meta">+0x02</span></div>
+        <div><input class="col-input col-input--xs col-input--mono" value="118"></div>
+      </div>
+      <div class="col-prop col-prop--muted">
+        <div class="col-prop-label"><span class="col-prop-name">unknown_06</span>
+          <span class="col-meta">+0x06 · 4b</span></div>
+        <div><input class="col-input col-input--xs col-input--mono" value="0x00000001"></div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<p class="col-note" style="margin-top:20px"><span>Status as text, for the
+  one-word verdict inside a sentence: the checksum is
+  <b class="col-ok">valid</b>, two fields are <b class="col-warn">unmapped</b>,
+  and the colony count is <b class="col-danger">out of range</b>. All three
+  clear 4.5:1 on every surface in both themes — the same bar the contrast
+  suite holds the rest of the palette to.</span></p>

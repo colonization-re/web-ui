@@ -4,6 +4,13 @@
  */
 
 .col-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+/* .col-field, .col-check and .col-switch each carry a bottom margin for a
+ * stacked form. A row is a horizontal arrangement, so that margin makes it
+ * taller than it should be and puts it off its own baseline. Neutralise it
+ * here rather than leave every consumer to discover it. */
+.col-row > .col-field,
+.col-row > .col-check,
+.col-row > .col-switch{margin-bottom:0}
 .col-spread{display:flex;gap:18px;justify-content:space-between;
   align-items:center;flex-wrap:wrap}
 .col-grid{display:grid;gap:16px;
@@ -14,3 +21,13 @@
 .col-art{image-rendering:pixelated;display:block;border:1px solid var(--border)}
 .col-foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--border);
   font-size:13px;color:var(--text-3);font-family:var(--font-mono)}
+
+/* Status as text. --ok/--warn/--danger were reachable only through a badge, a
+ * note or a button - all boxes - so a one-word status inside a sentence had
+ * nowhere to go. All three already clear 4.5:1 on --surface, --surface-2,
+ * --surface-3 and --bg in both themes, and the contrast suite holds them
+ * there; a utility that failed contrast would be worse than none, because it
+ * would look sanctioned. */
+.col-ok{color:var(--ok)}
+.col-warn{color:var(--warn)}
+.col-danger{color:var(--danger)}

@@ -7,11 +7,15 @@
 .col-label{display:block;font-family:var(--font-mono);font-size:11px;
   font-weight:500;letter-spacing:.1em;text-transform:uppercase;
   color:var(--text-3);margin:0 0 7px}
+/* The same voice, beside the control rather than above it. In a .col-row
+ * (align-items:center) it sits on the control's centre line. */
+.col-label--inline{display:inline-block;margin:0;white-space:nowrap}
 .col-hint{font-size:13px;color:var(--text-3);margin:7px 0 0}
 .col-hint--error{color:var(--danger)}
 
 .col-input,.col-select,.col-textarea{
-  font:inherit;font-size:14.5px;color:var(--text);width:100%;
+  --_w:100%;
+  font:inherit;font-size:14.5px;color:var(--text);width:var(--_w);
   background:var(--surface);
   border:1px solid var(--border-strong);
   border-radius:var(--r-sm);
@@ -32,6 +36,26 @@
 .col-input:disabled,.col-select:disabled,.col-textarea:disabled{
   background:var(--surface-3);color:var(--text-3);cursor:not-allowed}
 .col-input--mono{font-family:var(--font-mono);font-size:13.5px}
+
+/* Sizes. .col-input is a form control; a row of sixteen figures needs a
+ * smaller one, and an inline control needs to stop being width:100%. The
+ * three base rules are shared, so the sizes are too - each modifier is
+ * spelled for all three, so `col-select col-input--sm` reads the same as
+ * `col-select col-select--sm`.
+ *
+ * Width is a declared local, so a consumer can size one control with
+ * style="--_w:112px" instead of asking for another class. */
+.col-input--sm,.col-select--sm,.col-textarea--sm{padding:5px 8px;font-size:13px}
+.col-input--xs,.col-select--xs,.col-textarea--xs{--_w:78px;
+  padding:5px 8px;font-size:13px}
+.col-input--auto,.col-select--auto,.col-textarea--auto{--_w:auto}
+
+/* .col-select reserves room on the right for its drawn arrow, measured from
+ * the right edge - so a shrunk select has to move the arrow with it, or the
+ * text runs under it. */
+.col-select.col-input--sm,.col-select.col-input--xs,
+.col-select--sm,.col-select--xs{padding-right:26px;
+  background-position:calc(100% - 15px) 55%,calc(100% - 10px) 55%}
 
 .col-inputgroup{position:relative;display:block}
 .col-inputgroup .col-input{padding-left:34px}
@@ -93,3 +117,14 @@ fieldset.col-fieldset > legend{font-family:var(--font-mono);font-size:11px;
 .col-segmented button:hover{background:var(--surface-2);color:var(--text)}
 .col-segmented button[aria-selected="true"],.col-segmented button.is-active{
   background:var(--brand);color:var(--on-brand)}
+
+/* Captioned control cells: a tiny caption over a tiny input, tiled and
+ * wrapping. .col-field shrunk to a grid cell, for a fixed-length array - a
+ * colony's sixteen warehouse stocks, sixteen Europe prices, any per-good row.
+ *
+ * The <label> wrapper is load-bearing: it makes the caption the input's
+ * accessible name with no id/for pair, which is what makes this survive being
+ * generated in a loop. */
+.col-cells{display:flex;flex-wrap:wrap;gap:8px}
+.col-cell{display:flex;flex-direction:column;gap:3px}
+.col-cell > span{font-size:10.5px;color:var(--text-3)}

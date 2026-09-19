@@ -48,3 +48,11 @@ hr{border:0;height:1px;background:var(--border);margin:32px 0}
 .col-sectionhead{display:flex;align-items:center;gap:16px;margin:48px 0 20px}
 .col-sectionhead h2{margin:0;white-space:nowrap}
 .col-sectionhead::after{content:"";flex:1;height:1px;background:var(--border)}
+
+/* Small mono metadata: a byte offset, a width, a write number, an index, a bit
+ * mask - the quiet technical annotation beside a name. .col-mono is .93em of
+ * whatever it sits in and is not quiet; .col-badge is a bordered pill, too
+ * loud to repeat sixty times down a column. This is a role, not a size, and
+ * the tabular figures are part of it. */
+.col-meta{font-family:var(--font-mono);font-size:11px;color:var(--text-3);
+  font-variant-numeric:tabular-nums}

@@ -1,0 +1,37 @@
+/* range.css - The slider.
+ *
+ * The vendor track and thumb selectors CANNOT be combined into one selector
+ * list: a browser drops the whole list if it does not recognise one of them,
+ * so WebKit and Firefox each get their own rule. That is precisely why this
+ * lives in the shared sheet rather than in every consumer.
+ *
+ * `property-no-vendor-prefix` is disabled in stylelint.config.mjs - read the
+ * comment there before touching it.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-range{--_w:130px;
+  -webkit-appearance:none;appearance:none;
+  width:var(--_w);height:18px;
+  background:none;border:0;padding:0;margin:0;cursor:pointer}
+
+/* Track - 4px, the same edge as every other control. */
+.col-range::-webkit-slider-runnable-track{height:4px;
+  background:var(--surface-3);border:1px solid var(--border);
+  border-radius:var(--r-xs)}
+.col-range::-moz-range-track{height:4px;
+  background:var(--surface-3);border:1px solid var(--border);
+  border-radius:var(--r-xs)}
+
+/* Thumb - a rectangle, not a circle; the system has no pills. WebKit needs
+ * the negative margin to centre on a 4px track, Firefox centres its own. */
+.col-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+  width:12px;height:14px;margin-top:-6px;
+  background:var(--brand);border:0;border-radius:var(--r-xs)}
+.col-range::-moz-range-thumb{width:12px;height:14px;
+  background:var(--brand);border:0;border-radius:var(--r-xs)}
+
+.col-range:disabled{cursor:not-allowed}
+.col-range:disabled::-webkit-slider-thumb{background:var(--text-3)}
+.col-range:disabled::-moz-range-thumb{background:var(--text-3)}
