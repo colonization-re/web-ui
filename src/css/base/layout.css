@@ -1,0 +1,9 @@
+/* layout.css - The page container.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-wrap{max-width:var(--w);margin:0 auto;padding:40px 24px 96px}
+.col-wrap--wide{max-width:var(--w-wide)}
+.col-wrap--narrow{max-width:var(--w-narrow)}
+@media (max-width:640px){.col-wrap{padding:24px 16px 64px}}

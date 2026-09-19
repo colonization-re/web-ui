@@ -1,0 +1,29 @@
+/* ramps.css - Colour ramps - the raw steps. Nothing here is themed.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+:root{
+  /* Azure - the ink. 600 and 950 are sampled from the reference image. */
+  --azure-50:#eef4ff;  --azure-100:#dbe8ff; --azure-200:#b8d0fb;
+  --azure-300:#7fb0f7; --azure-400:#4785fb; --azure-500:#1f66ef;
+  --azure-600:#0c50b6; --azure-700:#0a3f90; --azure-800:#072c52;
+  --azure-900:#04192f; --azure-950:#000f23;
+
+  /* Cyan - the drawn line, and anything that has to read as active. */
+  --cyan-200:#b9e8fb; --cyan-300:#7ad4f5; --cyan-400:#35b9ec;
+  --cyan-500:#0e9bd0; --cyan-600:#0b7aa6; --cyan-700:#0a5f80;
+  --cyan-800:#0a6b91;
+
+  /* Status only. These are not part of the look. */
+  --green-300:#5fd8a4; --green-400:#22b573; --green-500:#158a56;
+  --green-600:#106b43;
+  --amber-300:#ffd166; --amber-400:#f0b429; --amber-500:#8f5e12;
+  --red-200:#ff9a90;   --red-300:#ffa79e;   --red-400:#ff7a6d;
+  --red-500:#cd1e13;   --red-600:#a30f08;
+
+  /* Neutrals: paper to ink, tilted cool so nothing reads as grey. */
+  --n-0:#ffffff;   --n-50:#f5f8fc;  --n-100:#e9eff7; --n-200:#d7e1ee;
+  --n-300:#c9d7e7; --n-400:#9db4ce; --n-500:#64809f; --n-600:#3c5878;
+  --n-700:#2f4763; --n-800:#1b2f47; --n-900:#0d1c2e;
+}

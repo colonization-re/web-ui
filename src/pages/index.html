@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>col.css — design system</title>
+<meta name="description" content="Blueprint design system: blue ink, flat fills, tight corners, visible borders.">
+<link rel="stylesheet" href="./col.css">
+<!-- include: partials/demo-styles.html -->
+
+<!-- include: partials/topbar.html -->
+
+<div class="col-wrap">
+  <!-- include: partials/plate.html -->
+  <!-- include: partials/palette.html -->
+  <!-- include: partials/buttons.html -->
+  <!-- include: partials/forms.html -->
+  <!-- include: partials/data.html -->
+  <!-- include: partials/figures.html -->
+  <!-- include: partials/prose.html -->
+
+  <footer class="col-foot">
+    {{name}} v{{version}} — no decorative gradients · every text token ≥ 4.5:1
+    in both themes · <code>npm run check</code>
+  </footer>
+</div>
+
+<!-- include: partials/dialog.html -->
+
+<script type="module">
+  const root = document.documentElement;
+  const seg = document.getElementById("theme");
+
+  function apply(t) {
+    if (t === "auto") delete root.dataset.theme;
+    else root.dataset.theme = t;
+    for (const b of seg.children) b.classList.toggle("is-active", b.dataset.t === t);
+  }
+
+  seg.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (b) apply(b.dataset.t);
+  });
+
+  addEventListener("keydown", (e) => {
+    if ((e.key === "d" || e.key === "D") &&
+        !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) {
+      apply(getComputedStyle(root).colorScheme === "dark" ? "light" : "dark");
+    }
+  });
+
+  const dlg = document.getElementById("dlg");
+  document.getElementById("open-dialog").onclick = () => dlg.showModal();
+  for (const b of dlg.querySelectorAll("[data-close]")) b.onclick = () => dlg.close();
+</script>
+</html>

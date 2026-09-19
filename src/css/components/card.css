@@ -1,0 +1,25 @@
+/* card.css - Card surfaces, including the corner-tick variant.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:20px 22px;
+  transition:border-color var(--t) var(--ease),background-color var(--t) var(--ease);
+}
+.col-card > :first-child{margin-top:0}
+.col-card > :last-child{margin-bottom:0}
+.col-card--hover:hover{border-color:var(--border-strong);background:var(--surface-2)}
+.col-card--line{border-top:2px solid var(--line)}
+
+/* Corner ticks, for a card that should read as a detail drawing. */
+.col-card--ticks{position:relative}
+.col-card--ticks::before,.col-card--ticks::after{
+  content:"";position:absolute;width:9px;height:9px;pointer-events:none}
+.col-card--ticks::before{left:-1px;top:-1px;
+  border-left:2px solid var(--line);border-top:2px solid var(--line)}
+.col-card--ticks::after{right:-1px;bottom:-1px;
+  border-right:2px solid var(--line);border-bottom:2px solid var(--line)}

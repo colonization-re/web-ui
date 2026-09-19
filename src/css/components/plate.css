@@ -1,0 +1,37 @@
+/* plate.css - Plate - the title block of a drawing.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-plate{
+  position:relative;
+  border:1px solid var(--border-strong);
+  border-radius:var(--r);
+  background:var(--surface);
+  padding:clamp(26px,4vw,44px);
+  margin:0 0 36px;
+  overflow:hidden;
+}
+/* a registration tick, bottom right */
+.col-plate::after{
+  content:"";position:absolute;right:18px;bottom:18px;width:22px;height:22px;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  opacity:.8;pointer-events:none;
+}
+.col-plate > *{position:relative;max-width:64ch}
+.col-plate h1{margin:0 0 12px}
+.col-plate .col-eyebrow{display:flex;align-items:center;gap:12px}
+.col-plate .col-eyebrow::after{content:"";width:56px;height:1px;
+  background:var(--line);opacity:.7}
+
+/* The strip of figures along the foot of a plate. */
+.col-plate-meta{display:flex;flex-wrap:wrap;gap:0;margin:26px 0 0;
+  border:1px solid var(--border);border-radius:var(--r-sm);
+  max-width:none;background:var(--surface-2)}
+.col-plate-meta > div{flex:1 1 150px;padding:10px 14px;
+  border-right:1px solid var(--border)}
+.col-plate-meta > div:last-child{border-right:0}
+.col-plate-meta dt{font-family:var(--font-mono);font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin:0}
+.col-plate-meta dd{margin:4px 0 0;font-size:15px;font-weight:600;
+  font-variant-numeric:tabular-nums}

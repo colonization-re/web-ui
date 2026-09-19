@@ -1,0 +1,16 @@
+/* tabs.css - Tabs.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);
+  margin:0 0 26px;overflow-x:auto;scrollbar-width:none}
+.col-tabs::-webkit-scrollbar{display:none}
+.col-tab{font:inherit;font-family:var(--font-mono);font-size:12.5px;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+  background:none;border:0;border-bottom:2px solid transparent;
+  padding:11px 16px;margin-bottom:-1px;color:var(--text-3);cursor:pointer;
+  transition:color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease)}
+.col-tab:hover{color:var(--text);border-bottom-color:var(--border-strong)}
+.col-tab[aria-selected="true"],.col-tab.is-active{color:var(--text);
+  border-bottom-color:var(--line)}

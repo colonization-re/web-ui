@@ -1,0 +1,23 @@
+/* tile.css - Stat tiles.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-tiles{display:grid;gap:0;margin:0 0 24px;
+  border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+  background:var(--surface);
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.col-tile{padding:18px 20px;border-right:1px solid var(--border)}
+.col-tile:last-child{border-right:0}
+.col-tile-k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--text-3)}
+.col-tile-v{font-size:30px;font-weight:660;letter-spacing:-.03em;
+  line-height:1.1;margin-top:8px;font-variant-numeric:tabular-nums}
+.col-tile-v em{font-style:normal;font-size:15px;font-weight:500;
+  color:var(--text-3);letter-spacing:0;font-family:var(--font-mono)}
+.col-tile-d{font-size:13px;color:var(--text-2);margin-top:7px}
+.col-tile--accent .col-tile-v{color:var(--line)}
+@media (max-width:700px){
+  .col-tile{border-right:0;border-bottom:1px solid var(--border)}
+  .col-tile:last-child{border-bottom:0}
+}

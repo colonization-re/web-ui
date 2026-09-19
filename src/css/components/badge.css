@@ -1,0 +1,26 @@
+/* badge.css - Badges and chips.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-badge{
+  --_c:var(--text-3);
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;
+  padding:3px 8px;border-radius:var(--r-xs);
+  color:var(--_c);
+  background:color-mix(in srgb,var(--_c) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--_c) 40%,transparent);
+}
+.col-badge--brand{--_c:var(--brand)}
+.col-badge--line{--_c:var(--line)}
+.col-badge--ok{--_c:var(--ok)}
+.col-badge--warn{--_c:var(--warn)}
+.col-badge--danger{--_c:var(--danger)}
+.col-badge--solid{background:var(--brand);color:var(--on-brand);
+  border-color:var(--brand)}
+
+.col-chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;
+  font-family:var(--font-mono);padding:4px 10px;border-radius:var(--r-xs);
+  background:var(--surface-3);border:1px solid var(--border);color:var(--text-2)}

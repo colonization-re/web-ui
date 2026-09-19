@@ -1,0 +1,24 @@
+/* table.css - Tables - ruled, as a table of figures should be.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-tablewrap{border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;background:var(--surface);margin:0 0 24px}
+.col-tablewrap .col-scroll{overflow-x:auto}
+.col-table{width:100%;border-collapse:collapse;font-size:14px}
+.col-table th{position:sticky;top:0;z-index:var(--z-sticky);background:var(--surface-2);
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--text-3);
+  text-align:right;white-space:nowrap;padding:10px 14px;
+  border-bottom:1px solid var(--border-strong)}
+.col-table th:first-child,.col-table td:first-child{text-align:left}
+.col-table td{padding:11px 14px;text-align:right;color:var(--text-2);
+  border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+.col-table td:first-child{color:var(--text);font-weight:550}
+.col-table tbody tr:last-child td{border-bottom:0}
+.col-table tbody tr:hover{background:var(--surface-2)}
+.col-table--ruled td{border-right:1px solid var(--rule)}
+.col-table--ruled td:last-child,.col-table--ruled th:last-child{border-right:0}
+.col-table--ruled th{border-right:1px solid var(--rule)}
+.col-table--compact td{padding:6px 14px}

@@ -1,0 +1,16 @@
+/* utilities.css - Layout helpers and one-off utilities.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.col-spread{display:flex;gap:18px;justify-content:space-between;
+  align-items:center;flex-wrap:wrap}
+.col-grid{display:grid;gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.col-grid--2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.col-stack > * + *{margin-top:14px}
+.col-push{margin-left:auto}
+.col-art{image-rendering:pixelated;display:block;border:1px solid var(--border)}
+.col-foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--border);
+  font-size:13px;color:var(--text-3);font-family:var(--font-mono)}

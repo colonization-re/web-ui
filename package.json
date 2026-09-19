@@ -1,0 +1,37 @@
+{
+  "name": "@colonization-re/web-ui",
+  "version": "1.0.0",
+  "description": "Blueprint design system — the shared stylesheet and component set for Colonization RE web tools",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "dist/col.css",
+  "style": "dist/col.css",
+  "exports": {
+    ".": "./dist/col.css",
+    "./tokens": "./dist/tokens.json",
+    "./min": "./dist/col.min.css"
+  },
+  "files": [
+    "dist",
+    "src/css"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch --serve",
+    "tokens": "node scripts/tokens.mjs",
+    "lint": "stylelint \"src/css/**/*.css\" && node scripts/check-css.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run build && npm run lint && npm test",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0",
+    "vitest": "^5.0.1"
+  }
+}

@@ -1,0 +1,65 @@
+<div class="col-sectionhead"><h2>Forms</h2></div>
+<div class="col-grid col-grid--2">
+  <div class="col-card">
+    <label class="col-field">
+      <span class="col-label">Colony name</span>
+      <input class="col-input" value="Jamestown">
+    </label>
+    <label class="col-field">
+      <span class="col-label">Map square</span>
+      <span class="col-inputgroup">
+        <span class="col-inputgroup-icon">@</span>
+        <input class="col-input col-input--mono" value="42, 17" placeholder="x, y">
+      </span>
+      <span class="col-hint">Column then row, from the north-west corner.</span>
+    </label>
+    <label class="col-field">
+      <span class="col-label">Difficulty</span>
+      <select class="col-select">
+        <option>Discoverer</option>
+        <option>Explorer</option>
+        <option selected>Conquistador</option>
+        <option>Governor</option>
+        <option>Viceroy</option>
+      </select>
+    </label>
+    <label class="col-field" style="margin:0">
+      <span class="col-label">Starting gold</span>
+      <input class="col-input" value="not a number" aria-invalid="true">
+      <span class="col-hint col-hint--error">Expected a whole number.</span>
+    </label>
+  </div>
+
+  <div class="col-card">
+    <fieldset class="col-fieldset">
+      <legend>Unit orders</legend>
+      <label class="col-check"><input type="radio" name="orders" checked>
+        <span>Fortify — hold the square</span></label>
+      <label class="col-check"><input type="radio" name="orders">
+        <span>Sentry — wake on contact</span></label>
+      <label class="col-check" style="margin:0"><input type="radio" name="orders" disabled>
+        <span>Build road — needs a pioneer</span></label>
+    </fieldset>
+    <fieldset class="col-fieldset">
+      <legend>Map overlays</legend>
+      <label class="col-check"><input type="checkbox" checked>
+        <span>Colony borders</span></label>
+      <label class="col-check" style="margin:0"><input type="checkbox">
+        <span>Trade routes</span></label>
+    </fieldset>
+    <label class="col-switch"><input type="checkbox" checked>
+      <span>Confirm before ending turn</span></label>
+    <label class="col-switch"><input type="checkbox">
+      <span>Animate unit movement</span></label>
+    <div class="col-segmented" style="margin-top:12px">
+      <button class="is-active">Turn</button>
+      <button>Decade</button>
+      <button>All</button>
+    </div>
+  </div>
+</div>
+
+<label class="col-field" style="margin-top:16px">
+  <span class="col-label">Notes</span>
+  <textarea class="col-textarea">Ore bonus on the hills to the east; worth a second colonist.</textarea>
+</label>

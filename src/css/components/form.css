@@ -1,0 +1,95 @@
+/* form.css - Fields, inputs, checks, switch, segmented control.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-field{display:block;margin:0 0 18px}
+.col-label{display:block;font-family:var(--font-mono);font-size:11px;
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);margin:0 0 7px}
+.col-hint{font-size:13px;color:var(--text-3);margin:7px 0 0}
+.col-hint--error{color:var(--danger)}
+
+.col-input,.col-select,.col-textarea{
+  font:inherit;font-size:14.5px;color:var(--text);width:100%;
+  background:var(--surface);
+  border:1px solid var(--border-strong);
+  border-radius:var(--r-sm);
+  padding:10px 12px;
+  -webkit-appearance:none;appearance:none;
+  transition:border-color var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);
+}
+.col-textarea{min-height:104px;resize:vertical;line-height:1.55}
+.col-select{padding-right:34px;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+    linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.col-input::placeholder,.col-textarea::placeholder{color:var(--text-3)}
+.col-input:hover,.col-select:hover,.col-textarea:hover{border-color:var(--text-3)}
+.col-input:focus,.col-select:focus,.col-textarea:focus{
+  outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--ring)}
+.col-input:disabled,.col-select:disabled,.col-textarea:disabled{
+  background:var(--surface-3);color:var(--text-3);cursor:not-allowed}
+.col-input--mono{font-family:var(--font-mono);font-size:13.5px}
+
+.col-inputgroup{position:relative;display:block}
+.col-inputgroup .col-input{padding-left:34px}
+.col-inputgroup > .col-inputgroup-icon{position:absolute;left:12px;top:50%;
+  transform:translateY(-50%);color:var(--text-3);font-size:13px;
+  font-family:var(--font-mono);pointer-events:none}
+
+fieldset.col-fieldset{border:1px solid var(--border);border-radius:var(--r);
+  padding:16px 18px;margin:0 0 20px;background:var(--surface-2)}
+fieldset.col-fieldset > legend{font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:0 7px}
+
+/* Checkbox, radio */
+.col-check{display:flex;align-items:flex-start;gap:10px;margin:0 0 11px;
+  cursor:pointer;font-size:14.5px;line-height:1.45}
+.col-check input[type="checkbox"],.col-check input[type="radio"]{
+  -webkit-appearance:none;appearance:none;margin:0;flex:none;position:relative;
+  width:17px;height:17px;transform:translateY(2px);cursor:pointer;
+  background:var(--surface);border:1px solid var(--border-strong);
+  border-radius:var(--r-xs);
+  transition:background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease)}
+.col-check input[type="radio"]{border-radius:50%}
+.col-check input:hover{border-color:var(--brand)}
+.col-check input:checked{background:var(--brand);border-color:var(--brand)}
+.col-check input[type="checkbox"]:checked::after{
+  content:"";position:absolute;left:5.5px;top:2px;width:4px;height:9px;
+  border:solid var(--on-brand);border-width:0 2px 2px 0;transform:rotate(43deg)}
+.col-check input[type="radio"]:checked::after{
+  content:"";position:absolute;inset:4px;border-radius:50%;
+  background:var(--on-brand)}
+.col-check input:disabled{background:var(--surface-3);border-color:var(--border);
+  cursor:not-allowed}
+.col-check input:disabled + span{color:var(--text-3)}
+.col-check:has(input:disabled){cursor:not-allowed}
+
+/* Switch: a rectangular throw, not a pill */
+.col-switch{display:flex;align-items:center;gap:11px;cursor:pointer;
+  margin:0 0 11px;font-size:14.5px}
+.col-switch input{-webkit-appearance:none;appearance:none;margin:0;flex:none;
+  position:relative;width:40px;height:22px;border-radius:var(--r-sm);
+  background:var(--surface-3);border:1px solid var(--border-strong);
+  cursor:pointer;transition:background var(--t) var(--ease),
+  border-color var(--t) var(--ease)}
+.col-switch input::after{content:"";position:absolute;top:2px;left:2px;
+  width:16px;height:16px;border-radius:1px;background:var(--text-3);
+  transition:transform var(--t) var(--ease),background var(--t) var(--ease)}
+.col-switch input:checked{background:var(--brand-soft);border-color:var(--brand)}
+.col-switch input:checked::after{transform:translateX(18px);background:var(--brand)}
+.col-switch input:disabled{opacity:.5;cursor:not-allowed}
+
+/* Segmented control */
+.col-segmented{display:inline-flex;border:1px solid var(--border-strong);
+  border-radius:var(--r-sm);overflow:hidden;background:var(--surface)}
+.col-segmented button{font:inherit;font-size:13px;font-weight:600;
+  padding:7px 15px;border:0;border-right:1px solid var(--border);
+  background:transparent;color:var(--text-2);cursor:pointer;
+  transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.col-segmented button:last-child{border-right:0}
+.col-segmented button:hover{background:var(--surface-2);color:var(--text)}
+.col-segmented button[aria-selected="true"],.col-segmented button.is-active{
+  background:var(--brand);color:var(--on-brand)}

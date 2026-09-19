@@ -1,0 +1,16 @@
+/* dialog.css - Modal dialog.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+/* Dialog */
+dialog.col-dialog{padding:0;color:var(--text);background:var(--surface);
+  border:1px solid var(--border-strong);border-radius:var(--r);
+  box-shadow:var(--sh);max-width:min(560px,92vw);width:100%}
+dialog.col-dialog::backdrop{background:color-mix(in srgb,#000f23 66%,transparent)}
+.col-dialog-head{padding:20px 22px 0}
+.col-dialog-head h3{margin:0}
+.col-dialog-body{padding:12px 22px 18px;color:var(--text-2)}
+.col-dialog-foot{padding:14px 22px;border-top:1px solid var(--border);
+  background:var(--surface-2);display:flex;gap:10px;justify-content:flex-end;
+  flex-wrap:wrap}

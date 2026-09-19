@@ -1,0 +1,24 @@
+/* a11y.css - Focus, scrollbars, motion, print. Imported last, on purpose.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;
+  border-radius:var(--r-xs)}
+
+*{scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:0;
+  border:3px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:var(--text-3);background-clip:content-box}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;
+    animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+@media print{
+  body{background:#fff;color:#000;background-image:none}
+  .col-bar{position:static}
+  .col-plate::after{display:none}
+}

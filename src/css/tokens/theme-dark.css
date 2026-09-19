@@ -1,0 +1,71 @@
+/* theme-dark.css - Semantic tokens, dark (blueprint). Two blocks: the media
+ * query, and the explicit data-theme override.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#061426;
+  --grid:rgba(127,176,247,.07);
+  --grid-major:rgba(53,185,236,.13);
+
+  --surface:#0a1d33;
+  --surface-2:#0e2841;
+  --surface-3:#143252;
+
+  --border:#21456d;
+  --border-strong:#35618f;
+  --rule:#17334f;
+
+  --text:#e6eefa;
+  --text-2:#a6bfdb;
+  --text-3:#85a2c0;
+
+  --brand:#4d9dff;
+  --brand-hover:#7fb0f7;
+  --brand-soft:color-mix(in srgb,#4d9dff 16%,var(--surface));
+  --on-brand:#04192f;
+
+  --line:var(--cyan-300);
+  --line-fill:var(--cyan-400);
+  --on-line:#04202b;
+
+  --ok:var(--green-300);
+  --warn:var(--amber-300);
+  --danger:var(--red-400);
+  --danger-hover:var(--red-200);
+  --on-danger:#3d0703;
+
+  --ring:color-mix(in srgb,var(--brand) 55%,transparent);
+  --sh:0 16px 40px -20px rgba(0,0,0,.85);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#061426;
+  --grid:rgba(127,176,247,.07);
+  --grid-major:rgba(53,185,236,.13);
+  --surface:#0a1d33;
+  --surface-2:#0e2841;
+  --surface-3:#143252;
+  --border:#21456d;
+  --border-strong:#35618f;
+  --rule:#17334f;
+  --text:#e6eefa;
+  --text-2:#a6bfdb;
+  --text-3:#85a2c0;
+  --brand:#4d9dff;
+  --brand-hover:#7fb0f7;
+  --brand-soft:color-mix(in srgb,#4d9dff 16%,var(--surface));
+  --on-brand:#04192f;
+  --line:var(--cyan-300);
+  --line-fill:var(--cyan-400);
+  --on-line:#04202b;
+  --ok:var(--green-300);
+  --warn:var(--amber-300);
+  --danger:var(--red-400);
+  --danger-hover:var(--red-200);
+  --on-danger:#3d0703;
+  --ring:color-mix(in srgb,var(--brand) 55%,transparent);
+  --sh:0 16px 40px -20px rgba(0,0,0,.85);
+  color-scheme:dark;
+}

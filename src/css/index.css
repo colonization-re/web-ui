@@ -1,0 +1,35 @@
+/* index.css - the entry point. esbuild bundles these in order.
+ *
+ * ORDER MATTERS. Tokens first, then base, then components, then the
+ * utilities and a11y rules that have to win. Keep this list hand-written
+ * rather than globbed, so a reviewer can see the cascade.
+ *
+ * Rule of thumb: a value that is the same in both themes belongs in
+ * tokens/scales.css. A value that differs belongs in BOTH theme files.
+ *
+ * NOTE: CSS comments do not nest. Never write a comment opener inside one -
+ * it ends the comment there, and everything down to the next block is parsed
+ * as a selector. `npm run lint` catches that.
+ */
+
+@import "./tokens/ramps.css";
+@import "./tokens/scales.css";
+@import "./tokens/theme-light.css";
+@import "./tokens/theme-dark.css";
+@import "./base/reset.css";
+@import "./base/layout.css";
+@import "./base/typography.css";
+@import "./components/plate.css";
+@import "./components/card.css";
+@import "./components/bar.css";
+@import "./components/dialog.css";
+@import "./components/button.css";
+@import "./components/form.css";
+@import "./components/tabs.css";
+@import "./components/table.css";
+@import "./components/badge.css";
+@import "./components/meter.css";
+@import "./components/tile.css";
+@import "./components/note.css";
+@import "./utilities.css";
+@import "./a11y.css";

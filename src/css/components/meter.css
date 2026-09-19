@@ -1,0 +1,29 @@
+/* meter.css - Meters, stacked bars, legends.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-meter{height:10px;background:var(--surface-3);
+  border:1px solid var(--border);border-radius:var(--r-xs);
+  overflow:hidden;position:relative}
+.col-meter > i{display:block;height:100%;background:var(--brand)}
+.col-meter--line > i{background:var(--line-fill)}
+.col-meter--tall{height:16px}
+/* tick marks every 10% */
+.col-meter--ticked{background-image:repeating-linear-gradient(90deg,
+  transparent 0 calc(10% - 1px),var(--border) calc(10% - 1px),var(--border) 10%)}
+
+.col-stack-bar{display:flex;height:40px;gap:1px;margin:16px 0;
+  border:1px solid var(--border);border-radius:var(--r-xs);overflow:hidden;
+  background:var(--border)}
+.col-stack-bar > i{display:block;min-width:3px}
+.col-stack-bar > i.is-empty{
+  background-image:repeating-linear-gradient(45deg,transparent 0 5px,
+    var(--border) 5px 6px);background-color:var(--surface-2)}
+
+.col-legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;
+  color:var(--text-2);margin:14px 0 0}
+.col-legend > span{display:flex;align-items:center;gap:8px}
+.col-legend i{width:10px;height:10px;flex:none;border-radius:1px}
+.col-legend b{color:var(--text);font-family:var(--font-mono);
+  font-variant-numeric:tabular-nums}

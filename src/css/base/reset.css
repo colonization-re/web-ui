@@ -1,0 +1,32 @@
+/* reset.css - Box model, document, page background, selection.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  background-color:var(--bg);
+}
+
+/* Ruled ground, opt-in: an 80px major grid over an 8px minor one. Off by
+   default -- put .col-ruled on <body> if a page wants it. */
+body.col-ruled{
+  background-image:
+    linear-gradient(var(--grid-major) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:80px 80px,80px 80px,8px 8px,8px 8px;
+  background-position:-1px -1px;
+  background-attachment:fixed;
+}
+
+::selection{background:color-mix(in srgb,var(--brand) 30%,transparent)}

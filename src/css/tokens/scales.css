@@ -1,0 +1,33 @@
+/* scales.css - Radius, border width, motion, layers, widths, fonts -
+ * everything that does not change between themes.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+:root{
+  /* Radius. The system tops out at 6px; nothing is a pill. */
+  --r-xs:2px; --r-sm:3px; --r:4px; --r-lg:6px;
+
+  /* Border widths. 1px is the system's voice; 2px marks a state. */
+  --bw:1px; --bw-2:2px;
+
+  /* Motion. Two speeds: a state change, and a change of shape. */
+  --t-fast:.12s;
+  --t:.14s;
+  --ease:cubic-bezier(.32,.72,0,1);
+
+  /* Layers. Two, and they are the only z-indexes in the sheet. */
+  --z-sticky:1;
+  --z-bar:50;
+
+  /* Container widths. */
+  --w:1100px;
+  --w-wide:1440px;
+  --w-narrow:760px;
+
+  /* Type families. Mono labels and measures; sans is read. */
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,
+         "Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,
+              "Liberation Mono",monospace;
+}

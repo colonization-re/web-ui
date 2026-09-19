@@ -1,0 +1,21 @@
+/* bar.css - Sticky top bar and brand mark.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+/* Sticky top bar */
+.col-bar{position:sticky;top:0;z-index:var(--z-bar);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  border-bottom:1px solid var(--border)}
+@supports (backdrop-filter:blur(1px)){
+  .col-bar{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+}
+.col-bar-in{max-width:var(--w-wide);margin:0 auto;padding:11px 24px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.col-brand{display:flex;align-items:center;gap:10px;text-decoration:none;
+  font-family:var(--font-mono);font-size:14px;font-weight:600;
+  letter-spacing:.02em;color:var(--text)}
+.col-brand-mark{width:22px;height:22px;flex:none;border-radius:var(--r-xs);
+  border:1px solid var(--line);position:relative}
+.col-brand-mark::after{content:"";position:absolute;inset:4px;
+  border:1px solid var(--brand)}

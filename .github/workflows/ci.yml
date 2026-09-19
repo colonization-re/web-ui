@@ -1,0 +1,82 @@
+# Build, lint and test every push; publish dist/ to GitHub Pages from main.
+#
+# The Pages deploy is the DEV channel: it always reflects the tip of main, so
+# the URLs below move under you. Pin a release instead for anything shipping.
+#
+#   https://colonization-re.github.io/web-ui/           the gallery
+#   https://colonization-re.github.io/web-ui/col.css    the stylesheet
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Supersede an in-flight PR run when the branch is pushed again. Runs on main
+# are never cancelled, so a deploy is not killed halfway.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # dist/ is not committed, so this only proves the build is deterministic:
+      # a second run must produce the same bytes as the first.
+      - name: Build is reproducible
+        run: npm run build -- --check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      # Every run keeps its CSS for 14 days, so a PR can be linked to the exact
+      # stylesheet it produces without waiting for a release.
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-ui-dist
+          path: dist/
+          retention-days: 14
+
+      - name: Package dist/ for Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

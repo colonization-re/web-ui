@@ -1,0 +1,54 @@
+/* button.css - Buttons - flat fill, visible edge, square shoulders.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-btn{
+  --_bg:var(--brand);
+  --_fg:var(--on-brand);
+  --_bd:var(--brand);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font:inherit;font-size:14px;font-weight:600;line-height:1;
+  letter-spacing:-.005em;
+  padding:10px 18px;min-height:38px;
+  color:var(--_fg);background:var(--_bg);
+  border:1px solid var(--_bd);
+  border-radius:var(--r-sm);
+  cursor:pointer;text-decoration:none;white-space:nowrap;
+  -webkit-appearance:none;appearance:none;
+  transition:background-color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),
+             color var(--t-fast) var(--ease);
+}
+.col-btn:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+.col-btn:active{transform:translateY(.5px)}
+.col-btn:disabled,.col-btn[aria-disabled="true"]{
+  background:var(--surface-3);color:var(--text-3);border-color:var(--border);
+  cursor:not-allowed;transform:none}
+
+/* Outline is the default voice of a blueprint. */
+.col-btn--outline{--_bg:transparent;--_fg:var(--brand);--_bd:var(--brand)}
+.col-btn--outline:hover{background:var(--brand-soft);
+  border-color:var(--brand);color:var(--brand-hover)}
+
+.col-btn--line{--_bg:var(--line-fill);--_fg:var(--on-line);--_bd:var(--line-fill)}
+.col-btn--line:hover{filter:brightness(1.08);background:var(--line-fill);
+  border-color:var(--line-fill)}
+
+.col-btn--ghost{--_bg:transparent;--_fg:var(--text);--_bd:var(--border-strong)}
+.col-btn--ghost:hover{background:var(--surface-2);border-color:var(--text-3);
+  color:var(--text)}
+
+.col-btn--quiet{--_bg:transparent;--_fg:var(--text-2);--_bd:transparent}
+.col-btn--quiet:hover{background:var(--surface-2);border-color:var(--border);
+  color:var(--text)}
+
+.col-btn--danger{--_bg:var(--danger);--_fg:var(--on-danger);--_bd:var(--danger)}
+.col-btn--danger:hover{background:var(--danger-hover);
+  border-color:var(--danger-hover);color:var(--on-danger)}
+
+.col-btn--sm{font-size:12.5px;padding:6px 12px;min-height:30px;gap:6px}
+.col-btn--lg{font-size:15px;padding:13px 24px;min-height:46px}
+.col-btn--block{display:flex;width:100%}
+.col-btn--icon{padding:0;width:38px;min-height:38px}
+.col-btn--sm.col-btn--icon{width:30px}
+.col-btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
