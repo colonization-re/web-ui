@@ -1,0 +1,31 @@
+/* list.css - A vertical nav list: a scrolling index of things you pick
+ * between, exactly one active. The horizontal cousin is .col-tabs; a table of
+ * figures is .col-table. This is neither.
+ *
+ * No padding and no background: the consumer owns the pane it sits in and
+ * decides how that pane scrolls.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-list{display:flex;flex-direction:column;gap:2px}
+.col-list-item{display:flex;align-items:baseline;gap:9px;width:100%;
+  font:inherit;font-size:13px;text-align:left;
+  padding:6px 9px;border:0;border-radius:var(--r-sm);
+  background:none;color:var(--text);cursor:pointer;
+  transition:background var(--t-fast) var(--ease)}
+.col-list-item:hover{background:var(--surface-3)}
+.col-list-item[aria-selected="true"],.col-list-item.is-active{
+  background:var(--brand);color:var(--on-brand)}
+
+/* The quiet leading slot: an index, an id, a count. */
+.col-list-i{flex:none;min-width:26px;font-family:var(--font-mono);
+  font-size:11px;color:var(--text-3);font-variant-numeric:tabular-nums}
+
+/* Inside an active item the slot must flip to the ink of the fill. --text-3
+ * on --brand fails contrast in both themes, and the number disappears. */
+.col-list-item[aria-selected="true"] .col-list-i,
+.col-list-item.is-active .col-list-i{color:var(--on-brand);opacity:.75}
+
+/* A nested index, one level in. */
+.col-list-item--sub{padding-left:26px}

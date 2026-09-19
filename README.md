@@ -23,7 +23,8 @@ src/
     tokens/             ramps · scales · theme-light · theme-dark
     base/               reset · layout · typography
     components/         plate card bar dialog button form
-                        tabs table badge meter tile note
+                        tabs list disclosure props range
+                        table badge meter tile note
     utilities.css
     a11y.css            focus, scrollbars, motion, print — imported last
   pages/index.html      the styleguide
@@ -133,7 +134,14 @@ custom property:
 ```
 
 Component-local properties are prefixed with an underscore (`--_c`, `--_bg`) so
-a reader can tell them from the design tokens at a glance.
+a reader can tell them from the design tokens at a glance. Two of them are
+meant to be set from outside: `--_k` widens `.col-prop`'s label column, and
+`--_w` sizes one `.col-input`, `.col-select`, `.col-textarea` or `.col-range`
+without asking for another class.
+
+```html
+<input class="col-input col-input--auto" style="--_w:260px">
+```
 
 ### Shape and motion
 
@@ -180,14 +188,16 @@ Both failures in 1 and 5 are in the test suite because both have happened.
 | layout | `.col-wrap` (`--wide`, `--narrow`), `.col-row`, `.col-spread`, `.col-grid` (`--2`), `.col-stack`, `.col-push`, `.col-foot` |
 | chrome | `.col-bar` + `.col-bar-in`, `.col-brand` + `.col-brand-mark`, `.col-sectionhead` |
 | title block | `.col-plate`, `.col-plate-meta` |
-| type | `.col-eyebrow`, `.col-lead`, `.col-dim`, `.col-faint`, `.col-mono`, `.col-tnum`, `.col-mark`, `.col-rule-dashed` |
-| surfaces | `.col-card` (`--hover`, `--line`, `--ticks`), `dialog.col-dialog` + `-head`/`-body`/`-foot` |
-| buttons | `.col-btn` + `--outline`, `--line`, `--ghost`, `--quiet`, `--danger`, `--sm`, `--lg`, `--icon`, `--block`; `.col-btnrow` |
-| forms | `.col-field`, `.col-label`, `.col-hint` (`--error`), `.col-input` (`--mono`), `.col-inputgroup` + `-icon`, `.col-select`, `.col-textarea`, `.col-fieldset`, `.col-check`, `.col-switch`, `.col-segmented` |
-| navigation | `.col-tabs`, `.col-tab` |
+| type | `.col-eyebrow`, `.col-lead`, `.col-dim`, `.col-faint`, `.col-mono`, `.col-meta`, `.col-tnum`, `.col-mark`, `.col-rule-dashed` |
+| surfaces | `.col-card` (`--hover`, `--line`, `--ticks`), `details.col-disclosure`, `dialog.col-dialog` + `-head`/`-body`/`-foot` |
+| buttons | `.col-btn` + `--outline`, `--line`, `--ghost`, `--quiet`, `--danger`, `--sm`, `--lg`, `--icon`, `--block`, `--file`; `.col-btnrow` |
+| forms | `.col-field`, `.col-label` (`--inline`), `.col-hint` (`--error`), `.col-input` (`--mono`, `--sm`, `--xs`, `--auto`), `.col-inputgroup` + `-icon`, `.col-select`, `.col-textarea`, `.col-range`, `.col-fieldset`, `.col-check`, `.col-switch`, `.col-segmented`, `.col-cells` + `.col-cell` |
+| navigation | `.col-tabs`, `.col-tab`, `.col-list` + `.col-list-item` (`--sub`) + `.col-list-i` |
 | data | `.col-tablewrap` + `.col-scroll` + `.col-table` (`--ruled`, `--compact`), `.col-badge` (`--brand`, `--line`, `--ok`, `--warn`, `--danger`, `--solid`), `.col-chip` |
-| figures | `.col-tiles`/`.col-tile` (`--accent`) + `.col-tile-k`/`-v`/`-d`, `.col-meter` (`--line`, `--tall`, `--ticked`), `.col-stack-bar`, `.col-legend` |
+| figures | `.col-tiles`/`.col-tile` (`--accent`) + `.col-tile-k`/`-v` (`--text`)/`-d`, `.col-meter` (`--line`, `--tall`, `--ticked`), `.col-stack-bar`, `.col-legend` |
 | notices | `.col-note` (`--ok`, `--warn`, `--danger`, `--line`), `.col-dl` |
+| records | `.col-props`/`.col-prop` (`--muted`) + `.col-prop-label`/`-name`/`-desc` |
+| status text | `.col-ok`, `.col-warn`, `.col-danger` — the status tokens as text, for a one-word verdict inside a sentence |
 | misc | `.col-art` (pixel-art rendering), `body.col-ruled` |
 
 ## Conventions

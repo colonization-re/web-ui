@@ -21,3 +21,8 @@
   .col-tile{border-right:0;border-bottom:1px solid var(--border)}
   .col-tile:last-child{border-bottom:0}
 }
+
+/* A tile whose value is a name, a file, a status or an ID - 30px/660 is sized
+ * for a figure and wraps such a value straight out of the tile. break-all is
+ * for identifiers with no break opportunity (_DECLARE.SAV). */
+.col-tile-v--text{font-size:16px;letter-spacing:-.01em;word-break:break-all}
