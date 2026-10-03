@@ -25,6 +25,7 @@ src/
     components/         plate card bar dialog button form
                         tabs list disclosure props range
                         table badge meter tile note
+                        nav prose search docs
     utilities.css
     a11y.css            focus, scrollbars, motion, print — imported last
   pages/index.html      the styleguide
@@ -79,7 +80,7 @@ Consumers pin a release asset — no build step, no JavaScript:
 ```html
 <!-- pinned, the one to use -->
 <link rel="stylesheet"
-      href="https://github.com/colonization-re/web-ui/releases/download/v1.1.0/col.css">
+      href="https://github.com/colonization-re/web-ui/releases/download/v1.2.0/col.css">
 
 <!-- rolling -->
 <link rel="stylesheet"
@@ -192,13 +193,34 @@ Both failures in 1 and 5 are in the test suite because both have happened.
 | surfaces | `.col-card` (`--hover`, `--line`, `--ticks`), `details.col-disclosure`, `dialog.col-dialog` + `-head`/`-body`/`-foot` |
 | buttons | `.col-btn` + `--outline`, `--line`, `--ghost`, `--quiet`, `--danger`, `--sm`, `--lg`, `--icon`, `--block`, `--file`; `.col-btnrow` |
 | forms | `.col-field`, `.col-label` (`--inline`), `.col-hint` (`--error`), `.col-input` (`--mono`, `--sm`, `--xs`, `--auto`), `.col-inputgroup` + `-icon`, `.col-select`, `.col-textarea`, `.col-range`, `.col-fieldset`, `.col-check`, `.col-switch`, `.col-segmented`, `.col-cells` + `.col-cell` |
-| navigation | `.col-tabs`, `.col-tab`, `.col-list` + `.col-list-item` (`--sub`) + `.col-list-i` |
+| navigation | `.col-tabs`, `.col-tab`, `.col-list` + `.col-list-item` (`--sub`) + `.col-list-i`, `.col-nav` + `.col-nav-group`/`-title`/`-link` (`--sub`, `--soon`), `.col-toc` + `-title`/`-list`/`-link` (`--sub`), `.col-crumbs`, `.col-pager` + `-link` (`--next`)/`-k`/`-t` |
+| documentation | `.col-docs` + `-side`/`-main`/`-toc`/`-toggle`, `.col-prose`, `.col-anchor`, `.col-search` + `-results`/`-item`/`-k`/`-t`/`-d`/`-empty` |
 | data | `.col-tablewrap` + `.col-scroll` + `.col-table` (`--ruled`, `--compact`), `.col-badge` (`--brand`, `--line`, `--ok`, `--warn`, `--danger`, `--solid`), `.col-chip` |
 | figures | `.col-tiles`/`.col-tile` (`--accent`) + `.col-tile-k`/`-v` (`--text`)/`-d`, `.col-meter` (`--line`, `--tall`, `--ticked`), `.col-stack-bar`, `.col-legend` |
 | notices | `.col-note` (`--ok`, `--warn`, `--danger`, `--line`), `.col-dl` |
 | records | `.col-props`/`.col-prop` (`--muted`) + `.col-prop-label`/`-name`/`-desc` |
 | status text | `.col-ok`, `.col-warn`, `.col-danger` — the status tokens as text, for a one-word verdict inside a sentence |
-| misc | `.col-art` (pixel-art rendering), `body.col-ruled` |
+| misc | `.col-art` (pixel-art rendering), `body.col-ruled`, `.col-skip-link` |
+
+## Documentation pages
+
+`.col-docs` is a three-column shell for a set of pages: a sticky index
+(`.col-docs-side` holding a `.col-nav`), the page (`.col-docs-main`), and an
+outline of the page (`.col-docs-toc` holding a `.col-toc`). It drops the outline
+below 1200px and folds the index behind a `.col-docs-toggle` button below
+900px. The sheet ships no JavaScript, so the page toggles `.is-open` on
+`.col-docs-side` itself, and keeps the outline's `.is-active` in step with the
+scroll position if it wants that.
+
+`.col-prose` styles what a Markdown converter emits — bare `h2`, `table`,
+`blockquote`, `ul` with no classes — so the converter does not need to know the
+class names. Blockquotes read as notes; tables take `.col-table`'s rules with
+words-first alignment and honour Markdown's `align` attributes. Wrap a wide
+table in `.col-tablewrap > .col-scroll` for an edge and a horizontal scroll.
+
+`--_top` on `.col-docs` is the sticky offset (the bar's height, 58px by
+default). `.col-prose` reads it as the scroll margin for headings, so a jump to
+`#section` does not land under the bar.
 
 ## Conventions
 

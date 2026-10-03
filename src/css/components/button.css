@@ -19,7 +19,11 @@
   transition:background-color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),
              color var(--t-fast) var(--ease);
 }
-.col-btn:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+/* The colour is restated on hover because a:hover (0,1,1) is more specific
+ * than .col-btn (0,1,0): on an <a class="col-btn"> it painted the label in
+ * --brand-hover, the same colour as the fill, and the text vanished. */
+.col-btn:hover{background:var(--brand-hover);border-color:var(--brand-hover);
+  color:var(--_fg)}
 .col-btn:active{transform:translateY(.5px)}
 .col-btn:disabled,.col-btn[aria-disabled="true"]{
   background:var(--surface-3);color:var(--text-3);border-color:var(--border);

@@ -35,5 +35,9 @@
 @import "./components/meter.css";
 @import "./components/tile.css";
 @import "./components/note.css";
+@import "./components/nav.css";
+@import "./components/prose.css";
+@import "./components/search.css";
+@import "./components/docs.css";
 @import "./utilities.css";
 @import "./a11y.css";

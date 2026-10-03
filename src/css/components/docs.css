@@ -1,0 +1,47 @@
+/* docs.css - The documentation shell: a sticky index of pages on the left,
+ * the page in the middle, an "on this page" outline on the right.
+ *
+ *   <div class="col-docs">
+ *     <aside class="col-docs-side">  .col-nav  </aside>
+ *     <main class="col-docs-main">   .col-prose, .col-pager  </main>
+ *     <aside class="col-docs-toc">   .col-toc  </aside>
+ *   </div>
+ *
+ * Three columns from 1200px, two (index + page) from 900px, one below that.
+ * In one column the index folds away behind a .col-docs-toggle button, and
+ * opening it is the consumer's job - toggle .is-open on .col-docs-side -
+ * because the sheet ships no JavaScript.
+ *
+ * --_top is the sticky offset: the height of whatever sits above the columns,
+ * normally one .col-bar. Set it on .col-docs if that bar is taller. .col-prose
+ * reads it too, so a heading that is jumped to does not land under the bar.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+.col-docs{--_top:58px;--_side:256px;--_toc:220px;
+  max-width:var(--w-wide);margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:var(--_side) minmax(0,1fr) var(--_toc);
+  gap:44px;align-items:start}
+
+.col-docs-side,.col-docs-toc{position:sticky;top:var(--_top);
+  max-height:calc(100vh - var(--_top));overflow-y:auto;
+  overscroll-behavior:contain;padding:28px 0 40px}
+.col-docs-side{padding-right:18px;border-right:1px solid var(--border)}
+.col-docs-main{min-width:0;padding:32px 0 96px}
+
+/* Hidden while the index is a column of its own. */
+.col-docs-toggle{display:none}
+
+@media (max-width:1199px){
+  .col-docs{grid-template-columns:var(--_side) minmax(0,1fr)}
+  .col-docs-toc{display:none}
+}
+@media (max-width:899px){
+  .col-docs{display:block;padding:0 16px}
+  .col-docs-toggle{display:inline-flex}
+  .col-docs-side{display:none;position:static;max-height:none;
+    padding:16px 0 20px;border-right:0;border-bottom:1px solid var(--border)}
+  .col-docs-side.is-open{display:block}
+  .col-docs-main{padding-top:24px}
+}

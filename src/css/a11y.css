@@ -6,6 +6,14 @@
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px;
   border-radius:var(--r-xs)}
 
+/* A "skip to content" link for pages with persistent navigation. Put it first
+ * inside .col-bar: the bar is positioned, so the link lands on top of it when
+ * focused and needs no layer of its own. */
+.col-skip-link{position:absolute;left:12px;top:-200px;padding:8px 14px;
+  font-size:14px;font-weight:600;text-decoration:none;
+  color:var(--on-brand);background:var(--brand);border-radius:var(--r-sm)}
+.col-skip-link:focus{top:8px;color:var(--on-brand)}
+
 *{scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -21,4 +29,7 @@
   body{background:#fff;color:#000;background-image:none}
   .col-bar{position:static}
   .col-plate::after{display:none}
+  .col-docs{display:block}
+  .col-docs-side,.col-docs-toc,.col-search,.col-docs-toggle,.col-skip-link{display:none}
+  .col-anchor{display:none}
 }

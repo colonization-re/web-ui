@@ -1,0 +1,85 @@
+<div class="col-sectionhead"><h2>Documentation</h2></div>
+<p class="col-dim">For a set of pages written in Markdown: <code>.col-docs</code>
+  lays out the index, the page and its outline; <code>.col-prose</code> styles the
+  bare elements a converter produces. The search panel is drawn here; finding
+  results is the page's own script.</p>
+
+<div class="col-grid">
+  <div class="col-card">
+    <nav class="col-nav" aria-label="Demo index">
+      <div class="col-nav-group">
+        <p class="col-nav-title">Player guides</p>
+        <a class="col-nav-link" href="#docs-demo">Map generation</a>
+        <a class="col-nav-link" href="#docs-demo" aria-current="page">Terrain and production</a>
+        <a class="col-nav-link col-nav-link--sub" href="#docs-demo">Special resources</a>
+        <a class="col-nav-link" href="#docs-demo">Combat</a>
+      </div>
+      <div class="col-nav-group">
+        <p class="col-nav-title">File formats</p>
+        <span class="col-nav-link col-nav-link--soon">Save files
+          <span class="col-badge">soon</span></span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col-card">
+    <nav class="col-toc" aria-label="Demo outline">
+      <p class="col-toc-title">On this page</p>
+      <ul class="col-toc-list">
+        <li><a class="col-toc-link" href="#docs-demo">At a glance</a></li>
+        <li><a class="col-toc-link is-active" href="#docs-demo">1. The terrain types</a></li>
+        <li><a class="col-toc-link col-toc-link--sub" href="#docs-demo">Forests</a></li>
+        <li><a class="col-toc-link" href="#docs-demo">2. What each square produces</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="col-card">
+    <div class="col-search">
+      <input class="col-input col-input--sm" type="search" placeholder="Search the guides" value="fur">
+      <div class="col-search-results" style="position:static;margin-top:8px">
+        <a class="col-search-item is-active" href="#docs-demo">
+          <span class="col-search-k">Founding Fathers</span>
+          <span class="col-search-t">Henry Hudson</span>
+          <span class="col-search-d"><mark>Fur</mark> from every worked land square is doubled.</span>
+        </a>
+        <a class="col-search-item" href="#docs-demo">
+          <span class="col-search-k">Terrain</span>
+          <span class="col-search-t">Special resources</span>
+          <span class="col-search-d">Beaver: <mark>fur</mark>s +3.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-card" id="docs-demo" style="margin-top:16px">
+  <ol class="col-crumbs">
+    <li><a href="#docs-demo">Docs</a></li>
+    <li><a href="#docs-demo">Player guides</a></li>
+    <li>Terrain</li>
+  </ol>
+  <div class="col-prose">
+    <h2 id="demo-glance">At a glance <a class="col-anchor" href="#demo-glance" aria-label="Link to this section">#</a></h2>
+    <p>Bare Markdown output: a paragraph, a list, a quote and a table, with no
+      classes on any of them.</p>
+    <ul>
+      <li>An <strong>expert farmer</strong> adds +2 food, not ×2.</li>
+      <li>A major river never adds extra food.</li>
+    </ul>
+    <blockquote><p><strong>Tip:</strong> Ore deposits on hills never run out.</p></blockquote>
+    <div class="col-tablewrap"><div class="col-scroll">
+      <table>
+        <thead><tr><th>Terrain</th><th align="right">Food</th><th align="right">Move</th><th>Resource</th></tr></thead>
+        <tbody>
+          <tr><td>Plains</td><td align="right">5</td><td align="right">1</td><td>Wheat</td></tr>
+          <tr><td>Hills</td><td align="right">2</td><td align="right">2</td><td>Ore deposit</td></tr>
+        </tbody>
+      </table>
+    </div></div>
+  </div>
+  <nav class="col-pager" aria-label="Demo pager">
+    <a class="col-pager-link" href="#docs-demo"><span class="col-pager-k">Previous</span><span class="col-pager-t">Map generation</span></a>
+    <a class="col-pager-link col-pager-link--next" href="#docs-demo"><span class="col-pager-k">Next</span><span class="col-pager-t">Units and colonists</span></a>
+  </nav>
+</div>

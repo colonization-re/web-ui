@@ -1,0 +1,73 @@
+/* nav.css - Moving between pages: the index of a set of pages, the outline of
+ * one page, a breadcrumb trail, and the previous/next pager at the foot.
+ *
+ * These are links, not controls. The current page is marked the way a screen
+ * reader expects, aria-current="page", and .is-active is accepted alongside it
+ * for an outline whose active entry follows the scroll position. .col-list is
+ * the cousin for picking between records inside one page; .col-tabs is the
+ * horizontal one.
+ *
+ * Imported by src/css/index.css. Do not edit dist/.
+ */
+
+/* The index: groups of links under a mono title. */
+.col-nav{display:flex;flex-direction:column;gap:24px;font-size:14px}
+.col-nav-group{display:flex;flex-direction:column;gap:1px}
+.col-nav-title{font-family:var(--font-mono);font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
+  margin:0 0 6px;padding:0 12px}
+.col-nav-link{display:flex;align-items:baseline;gap:8px;
+  padding:6px 10px;line-height:1.35;color:var(--text-2);text-decoration:none;
+  border-left:2px solid transparent;border-radius:0 var(--r-sm) var(--r-sm) 0;
+  transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.col-nav-link:hover{color:var(--text);background:var(--surface-3)}
+.col-nav-link[aria-current="page"],.col-nav-link.is-active{color:var(--text);
+  font-weight:600;background:var(--brand-soft);border-left-color:var(--line)}
+.col-nav-link--sub{padding-left:24px;font-size:13px}
+
+/* An entry that exists in the plan but not yet on disk. */
+.col-nav-link--soon{color:var(--text-3);cursor:default}
+.col-nav-link--soon:hover{color:var(--text-3);background:none}
+
+/* The outline: one page's headings, indented by level, the active one drawn
+ * with the line colour. */
+.col-toc{font-size:13px}
+.col-toc-title{font-family:var(--font-mono);font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
+  margin:0 0 10px}
+.col-toc-list{list-style:none;margin:0;padding:0}
+.col-toc-link{display:block;padding:4px 0 4px 12px;line-height:1.35;
+  color:var(--text-3);text-decoration:none;
+  border-left:1px solid var(--border);
+  transition:color var(--t-fast) var(--ease)}
+.col-toc-link:hover{color:var(--text)}
+.col-toc-link--sub{padding-left:24px}
+.col-toc-link.is-active,.col-toc-link[aria-current="true"]{color:var(--text);
+  border-left:2px solid var(--line);padding-left:11px}
+.col-toc-link--sub.is-active,.col-toc-link--sub[aria-current="true"]{
+  padding-left:23px}
+
+/* The breadcrumb: where this page sits. An <ol>, the last item the page. */
+.col-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+  list-style:none;margin:0 0 14px;padding:0;
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;
+  color:var(--text-3)}
+.col-crumbs li + li::before{content:"/";margin-right:6px}
+.col-crumbs a{color:var(--text-2);text-decoration:none}
+.col-crumbs a:hover{color:var(--brand)}
+
+/* The pager: the previous and next page, as two edges at the foot. */
+.col-pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:56px 0 0}
+.col-pager-link{display:flex;flex-direction:column;gap:4px;padding:14px 18px;
+  color:var(--text);text-decoration:none;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r);
+  transition:border-color var(--t-fast) var(--ease)}
+.col-pager-link:hover{color:var(--text);border-color:var(--brand)}
+.col-pager-link--next{grid-column:2;text-align:right}
+.col-pager-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3)}
+.col-pager-t{font-weight:600;color:var(--brand)}
+@media (max-width:640px){
+  .col-pager{grid-template-columns:1fr}
+  .col-pager-link--next{grid-column:auto}
+}
