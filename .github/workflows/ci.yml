@@ -3,8 +3,8 @@
 # The Pages deploy is the DEV channel: it always reflects the tip of main, so
 # the URLs below move under you. Pin a release instead for anything shipping.
 #
-#   https://colonization-re.github.io/web-ui/           the gallery
-#   https://colonization-re.github.io/web-ui/col.css    the stylesheet
+#   https://opencol.github.io/web-ui/           the gallery
+#   https://opencol.github.io/web-ui/col.css    the stylesheet
 name: ci
 
 on:

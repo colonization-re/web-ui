@@ -1,4 +1,4 @@
-# @colonization-re/web-ui
+# @opencol/web-ui
 
 The shared design system for the project's web tools: one stylesheet, one set
 of components, one palette.
@@ -64,7 +64,7 @@ palette from here rather than keeping a copy that drifts:
 
 ```js
 const tokens = await fetch(
-  "https://github.com/colonization-re/web-ui/releases/latest/download/tokens.json",
+  "https://github.com/OpenCol/web-ui/releases/latest/download/tokens.json",
 ).then((r) => r.json());
 const { "--border-strong": axis, "--brand": series } = tokens.themes.light;
 ```
@@ -80,17 +80,17 @@ Consumers pin a release asset — no build step, no JavaScript:
 ```html
 <!-- pinned, the one to use -->
 <link rel="stylesheet"
-      href="https://github.com/colonization-re/web-ui/releases/download/v1.2.0/col.css">
+      href="https://github.com/OpenCol/web-ui/releases/download/v1.2.0/col.css">
 
 <!-- rolling -->
 <link rel="stylesheet"
-      href="https://github.com/colonization-re/web-ui/releases/latest/download/col.css">
+      href="https://github.com/OpenCol/web-ui/releases/latest/download/col.css">
 ```
 
 Or from the package, if the consumer already has a bundler:
 
 ```html
-<link rel="stylesheet" href="node_modules/@colonization-re/web-ui/dist/col.css">
+<link rel="stylesheet" href="node_modules/@opencol/web-ui/dist/col.css">
 ```
 
 Themes follow `prefers-color-scheme` and respect `data-theme="light|dark"` on

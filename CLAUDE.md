@@ -4,7 +4,7 @@ Guidance for Claude Code working in this repo.
 
 ## What this is
 
-`col.css` — one shared stylesheet consumed by the other Colonization RE web
+`col.css` — one shared stylesheet consumed by the other OpenCol web
 projects over HTTP from a GitHub release. It is a CSS-only library: no
 JavaScript ships, and consumers need no build step.
 

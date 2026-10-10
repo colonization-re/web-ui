@@ -1,7 +1,7 @@
 {
-  "name": "@colonization-re/web-ui",
+  "name": "@opencol/web-ui",
   "version": "1.0.0",
-  "description": "Blueprint design system — the shared stylesheet and component set for Colonization RE web tools",
+  "description": "Blueprint design system — the shared stylesheet and component set for OpenCol web tools",
   "type": "module",
   "license": "MIT",
   "engines": {
